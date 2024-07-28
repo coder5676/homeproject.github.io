@@ -679,6 +679,8 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
         visibility:hidden;
     }.raining{
         visibility:visible;
+    }.nul{
+        visibility:hidden;
     }@keyframes drop{
         from{top:10px;}to{top:160px;}
     }.remainderbox{
