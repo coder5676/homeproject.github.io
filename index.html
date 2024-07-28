@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial"/>
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>          
+    <div id="a" ondblclick="openassistant()">
+       
+        <div id="remainderbox" class="remainderbox">
+            <p id="imagerem">🏂</p>
+            <p id="text">Hey! here is your reminder about</p>
+            <p id="mainarea">sabji lene jana hai</p>
+            <button id="snooze" onclick="snooze()">Remind again after 5 minutes</button>
+            <button id="complete" onclick="stop()">Stop</button>
+        </div>
+        <div id="r1" class="r1"></div>
+       <div id="r2" class="r2"></div>
+       <div id="r3" class="r3"></div>
+       <div id="r4" class="r4"></div>
+       <div id="r5" class="r5"></div>
+       <div id="info">
+        <div id="temp" class="temp" onclick="opentemp()" >
+        <h2 id="tempno">00°
+        </h2><p id="weathericon1">🐳</p></div>
+        <p id="daydate"></p>
+        <div id="tim" onclick="openclock()">
+       <h1 id="time">
+       </h1></div>
+       </div>
+       <div id="assistantbox" class="assistantbox">
+        <table><tr><td><p id="e1"></p></td>
+            <td><p id="e2"></p></td>
+            <td><p id="e1"></p></td>
+            <td><p id="e2"></p></td></tr></table>
+         <p id="request"></p>
+     </div>
+       <div id="r1" class="r1"></div>
+       <div id="r2" class="r2"></div>
+       <div id="r3" class="r3"></div>
+       <div id="r4" class="r4"></div>
+       <div id="r5" class="r5"></div>
+
+       <div class="temppop" id="temppop" onclick="closetemp()">
+        <p id="bgimage">🦕</p>
+        <p id="sun">✨</p>
+        <table>
+            <tr>
+            <td>
+        <h1 id="tempfont">00°</h1><p id="weathericon2">🦖</p></td></tr>
+        <tr>
+            <td>
+                <p id="location">Offline</p>
+                <p id="feelslike">00°</p>
+                <p id="greet">Data delay!</p>
+            </td>
+        </tr>
+    </table>
+        <div id="tempinfo">
+            <div id="tower">🔭</div>
+           <table>
+            <tr>
+                <td><p>Wind</p><p id="windspeed">0km/h</p></td>
+
+                </td>
+<td><p>Humidity</p><p id="humidity">0%</p>
+
+                </td>
+            </tr>
+            <tr>
+                <td>
+                <p>Visibility</p>0000<p id="visibility"></p>
+
+                </td>
+<td><p>Sky</p><p id="description">Delay</p>
+                </td>
+            </tr>
+            
+        </table></div>
+    </div>
+    <div id="swipebox" class="swipebox" >
+        <form action="https://www.google.com/search" method="get" id="searchform">
+            <input type="text" name="q" placeholder="Type anything here" id="searchbox" autocomplete="off" target="_top">
+
+        </form>
+    
+        <a id="musican" target="_top">
+        <button id="music" onclick="openmusic()">Music<p id="ic">🎵</p></button></a>
+        
+        <a href="https://www.youtube.com/" target="_self" id="new"><button id="youtube" >Youtube<p id="ic">🎥</p></button></a>
+        <button id="recipes"  onclick="openrecipe()">Recipes<p id="ic">🍕</p></button>
+       <button id="news"  onclick="opennews()">News<p id="ic">📰</p></button>
+    </div>
+    <iframe id="newsframe" name="newsframe" class="newsframe" ></iframe>
+    <div id="clockbox" class="clockbox">
+        <div id="setreminder" class="setreminder">
+<button onclick="closerem()" id="closerem">X</button>
+<input type="text" placeholder="Remind me about" id="remabout">
+<button id="setrem" onclick="save()">Ok</button>
+<h1 id="colon1">:</h1>
+<input type="number"  min="0" max="23" id="hr" value="00">
+<input type="number" min="0" max="59" id="mi" value="00">
+<input id="remindertime" type="text" placeholder="00:00">
+</div>
+        <h1 id="hm">20:30<p id="ss">56</p></h1><button id="alarm" onclick="openremainder()"></button>
+    <button id="themes" class="themes" onclick="openthemewindow()">
+    </button>
+<button id="close" onclick="closeclock()">X</button>
+<div id="themeswindow" class="themeswindow">
+    <button id="ta" onclick="ta()"></button>
+    <button id="tb" onclick="tb()"></button>
+    <button id="tc" onclick="tc()"></button>
+    <button id="td" onclick="td()"></button>
+    <button id="te" onclick="te()"></button>
+</div></div>
+
+    <div id="recipesbox" class="recipesbox"></div>
+    <div id="clock"></div>
+    <button id="swipe" onclick="openswipebox()">&#8592</button>
+    <div id="remainder" class="remainder"></div>
+    </div>
+    
+
+</body>
+<script src="main.js" >
+   
+    
+    </script>
+</html>
