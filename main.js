@@ -108,8 +108,8 @@ let temppopup=document.getElementById("temppop");
        
     }
     setInterval (showtime,1000);
-    /*const apikey="771268cf58226d55a8385e574cac8de9";*/
-    const apikey="9f75e97e657f0c97be3d8528384cef21";
+    const apikey="771268cf58226d55a8385e574cac8de9";
+    /*const apikey="9f75e97e657f0c97be3d8528384cef21";*/
     const apiurl="https://api.openweathermap.org/data/2.5/weather?units=metric";
     
     async function checkweather(city){
@@ -120,7 +120,7 @@ let temppopup=document.getElementById("temppop");
         const desc=["clear sky","few clouds","scattered clouds","broken clouds","shower rain","rain","thunderstorm","snow","mist","overcast clouds","light rain"];
         const descicon=["🪂","🌤️","🌨️","🌥️","🌧️","☔","⛈️","☃️","😶‍🌫️","☁️","🌧️"];
         const classlst=["shineday","backblur","mayrain","wow","raining","hugerain","fear","snow","mistview","teabreak","shower"];
-        const anim=["","","","","raining","raining","raining","","","","raining"];
+        const anim=["nul","nul","nul","nul","raining","raining","raining","nul","nul","nul","raining"];
 
         document.getElementById("tempno").innerHTML=temp;
         document.getElementById("tempfont").innerHTML=temp;
