@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="main.css">
+    
 </head>
 <body>          
-    <div id="a" ondblclick="openassistant()">
+    <div id="a">
+        <div id="assisbutton" onclick="openassistant()">
+            <table><tr><td>
+            <div id="e3"></div></td>
+            <td><div id="e3"></div></td></tr></table>
+        </div>
+       
+        <audio id="reminderaudio" loop>
+            <source src="reminder.mp3" type="audio/mpeg">
+
+        </audio>
+        <button id="wallpaper" onclick="openwallpaper()">✿</button>
+        <div id="wallpaperpopup" class="wallpaperpopup" onclick="closewallpaperpopup()">
+         <table><tr>
+            <td><div id="wa" onclick="wa()"></div></td>
+            <td><div id="wb" onclick="wb()"></div></td>
+            <td><div id="wc" onclick="wc()"></div></td>
+            <td><div id="wd" onclick="wd()"></div></td>
+            <td><div id="we" onclick="we()"></div></td></tr></table>
+        </div>
        
         <div id="remainderbox" class="remainderbox">
             <p id="imagerem">🏂</p>
@@ -35,7 +54,7 @@
             <td><p id="e2"></p></td>
             <td><p id="e1"></p></td>
             <td><p id="e2"></p></td></tr></table>
-         <p id="request"></p>
+         <p id="request">hello open youtube</p>
      </div>
        <div id="r1" class="r1"></div>
        <div id="r2" class="r2"></div>
@@ -71,7 +90,7 @@
             </tr>
             <tr>
                 <td>
-                <p>Visibility</p>0000<p id="visibility"></p>
+                <p>Visibility</p><p id="visibility">0000</p>
 
                 </td>
 <td><p>Sky</p><p id="description">Delay</p>
@@ -104,8 +123,8 @@
 <input type="number" min="0" max="59" id="mi" value="00">
 <input id="remindertime" type="text" placeholder="00:00">
 </div>
-        <h1 id="hm">20:30<p id="ss">56</p></h1><button id="alarm" onclick="openremainder()"></button>
-    <button id="themes" class="themes" onclick="openthemewindow()">
+        <h1 id="hm">20:30<p id="ss">56</p></h1><button id="alarm" onclick="openremainder()">Reminder</button>
+    <button id="themes" class="themes" onclick="openthemewindow()">Themes
     </button>
 <button id="close" onclick="closeclock()">X</button>
 <div id="themeswindow" class="themeswindow">
@@ -121,11 +140,5 @@
     <button id="swipe" onclick="openswipebox()">&#8592</button>
     <div id="remainder" class="remainder"></div>
     </div>
-    
-
 </body>
-<script src="main.js" >
-   
-    
-    </script>
 </html>
