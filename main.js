@@ -28,11 +28,13 @@ let temppopup=document.getElementById("temppop");
         return [remtime,remabout];
     } function save(){
         [rem,about]=config();
+        document.getElementById("setreminder").classList.remove("opensetreminder");
     }
     function stop(){
          rem="none";
          about="none";
          document.getElementById("remainderbox").classList.remove("openremainder");
+         document.getElementById("reminderaudio").pause();
     }
     function snooze(){
         document.getElementById("remainderbox").classList.remove("openremainder");
@@ -53,6 +55,7 @@ let temppopup=document.getElementById("temppop");
             minutes="0"+minutes;
         }
         rem=String(later);
+        document.getElementById("reminderaudio").pause();
     }
     function showtime(){
         let time=new Date;
@@ -70,7 +73,6 @@ let temppopup=document.getElementById("temppop");
         }
         let currenttime=hours+":"+min;
         var currtime=String(hours)+":"+String(min);
-        let fulldate=date+"-"+month+"-"+year;
         week=["Sun","Mon","Tue","Wed","Thr","Fri","Sat"];
         document.getElementById("time").innerHTML=currenttime;
         document.getElementById("daydate").innerHTML=week[day]+" "+date;
@@ -80,7 +82,7 @@ let temppopup=document.getElementById("temppop");
         text="Good morning";
         document.getElementById("temppop").style.backgroundColor="#A5BDEF";
             document.getElementById("bgimage").innerHTML="🦚";
-            document.getElementById("sun").innerHTML="🌴"
+            document.getElementById("sun").innerHTML="🌴";
         }      
         else if (hours>=12 && hours <16) {
             text='Good afternoon ';
@@ -99,11 +101,13 @@ let temppopup=document.getElementById("temppop");
             document.getElementById("temppop").style.backgroundColor="#1D1632";
             document.getElementById("bgimage").innerHTML="🏕️";
             document.getElementById("sun").innerHTML="✨";
+            document.getElementById("temp").classList.add("nightsky");
         }
         document.getElementById("greet").innerHTML=text;
         if(String(currtime)==String(rem)){
             document.getElementById("remainderbox").classList.add("openremainder");
             document.getElementById("mainarea").innerHTML=about;
+            document.getElementById("reminderaudio").play();
         }
        
     }
@@ -119,7 +123,6 @@ let temppopup=document.getElementById("temppop");
         temp=Math.round(data.main.temp)+"°";
         const desc=["clear sky","few clouds","scattered clouds","broken clouds","shower rain","rain","thunderstorm","snow","mist","overcast clouds","light rain"];
         const descicon=["🪂","🌤️","🌨️","🌥️","🌧️","☔","⛈️","☃️","😶‍🌫️","☁️","🌧️"];
-        const classlst=["shineday","backblur","mayrain","wow","raining","hugerain","fear","snow","mistview","teabreak","shower"];
         const anim=["nul","nul","nul","nul","raining","raining","raining","nul","nul","nul","raining"];
 
         document.getElementById("tempno").innerHTML=temp;
@@ -137,7 +140,6 @@ let temppopup=document.getElementById("temppop");
         if(position>-1){
         document.getElementById("weathericon1").innerHTML=descicon[position];
         document.getElementById("weathericon2").innerHTML=descicon[position];
-        document.getElementById("temp").classList.add(classlst[position]);
         document.getElementById("r1").classList.add(anim[position]);
         document.getElementById("r2").classList.add(anim[position]);
         document.getElementById("r3").classList.add(anim[position]);
@@ -146,11 +148,7 @@ let temppopup=document.getElementById("temppop");
        }
         else{
             document.getElementById("temp").style.backgroundColor="#9695E8";
-        }
-
-       
-      
-}
+        }}
     checkweather("Raebareli");
     function openswipebox(){
         document.getElementById("swipebox").classList.toggle("openswipe");
@@ -176,36 +174,26 @@ let temppopup=document.getElementById("temppop");
     function closeclock(){
         document.getElementById("clockbox").classList.remove("openclockbox");
     }function ta(){
-        document.getElementById("clockbox").style.backgroundImage="url('https://i.pinimg.com/736x/d8/6f/86/d86f8678fc65bb7ca9cf2f5f035b1702.jpg')";
-        document.getElementById("clockbox").style.backgroundPosition="center";
-        document.getElementById("clockbox").style.backgroundSize="cover";
-        document.getElementById("clockbox").style.backgroundRepeat="no-repeat";
+        document.getElementById("clockbox").style.background="linear-gradient(140deg,#C4E759,#6DE195)";
+       
     }
     function tb(){
-        document.getElementById("clockbox").style.backgroundImage="url('https://th.bing.com/th/id/OIP.Pxq2-VbQ71lXQQ0_TY-wOwAAAA?w=474&h=296&rs=1&pid=ImgDetMain')";
-        document.getElementById("clockbox").style.backgroundPosition="center";
-        document.getElementById("clockbox").style.backgroundSize="cover";
-        document.getElementById("clockbox").style.backgroundRepeat="no-repeat";
+        document.getElementById("clockbox").style.background="linear-gradient(240deg,#C1E3FF,#41C7AF)";
+       
 
     }
     function tc(){
-        document.getElementById("clockbox").style.backgroundImage="url('https://wallpapercave.com/wp/wp5269759.jpg')";
-        document.getElementById("clockbox").style.backgroundPosition="center";
-        document.getElementById("clockbox").style.backgroundSize="cover";
-        document.getElementById("clockbox").style.backgroundRepeat="no-repeat";
+        document.getElementById("clockbox").style.background="linear-gradient(200deg,#8DEBFF,#6CACFF)";
+       
     }
     function td(){
-        document.getElementById("clockbox").style.backgroundImage="url('https://i.pinimg.com/originals/f1/8a/cc/f18accd5b2ee2932940fc5d24dfc81ec.jpg')";
-        document.getElementById("clockbox").style.backgroundPosition="center";
-        document.getElementById("clockbox").style.backgroundSize="cover";
-        document.getElementById("clockbox").style.backgroundRepeat="no-repeat";
+        document.getElementById("clockbox").style.background="linear-gradient(240deg,#DEB0DF,#A16BFE)";
+        
         
     }
     function te(){
-        document.getElementById("clockbox").style.backgroundImage="url('https://th.bing.com/th/id/OIP.lDLjIoXr0JFxYus9aANjtAHaEK?w=480&h=270&rs=1&pid=ImgDetMain')";
-        document.getElementById("clockbox").style.backgroundPosition="center";
-        document.getElementById("clockbox").style.backgroundSize="cover";
-        document.getElementById("clockbox").style.backgroundRepeat="no-repeat";
+        document.getElementById("clockbox").style.background="linear-gradient(140deg,#FDEB82,#F78FED)";
+        
         
     }function openthemewindow(){
         document.getElementById("themeswindow").classList.toggle("openthemewindow");
@@ -223,8 +211,35 @@ let temppopup=document.getElementById("temppop");
     };
     function openassistant(){
         document.getElementById("assistantbox").classList.toggle("openassistantbox");
-    }
-    
-    
+    };
+    function openwallpaper(){
+        document.getElementById("wallpaperpopup").classList.add("openwallpaperwindow");
+    };
+    function closewallpaperpopup(){
+        document.getElementById("wallpaperpopup").classList.remove("openwallpaperwindow");
+    };
+    function wa(){
+        document.getElementById("a").style.backgroundImage="url('img1.jpg')";
+
+    };
+    function wb(){
+        document.getElementById("a").style.backgroundImage="url('img2.webp')";
+        
+
+    };
+    function wc(){
+        document.getElementById("a").style.backgroundImage="url('img3.jpg')";
+        
+
+    };
+    function wd(){
+        document.getElementById("a").style.backgroundImage="url('img4.jpeg')";
+
+    };
+    function we(){
+        document.getElementById("a").style.backgroundImage="url('img5.jpeg')";
+
+    };
+
     
     
