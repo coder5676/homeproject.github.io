@@ -4,12 +4,89 @@ body{
 #a{
     width:100%;
     height:100%;
-    background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/08/Desktop-Cool-Live-Backgrounds.jpg");
+    background: linear-gradient(130deg,#a5e9a5,#11bfc8);
     background-repeat: no-repeat;
     background-size: cover;
     display:flex;
   
    
+}#wallpaper{
+    position:absolute;
+    right:140px;
+    top:295px;
+    width:50px;
+    height:50px;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.051);
+    border: 0px;
+    border-radius: 20px;
+    color:white;
+}.wallpaperpopup{
+    background-color: #ffffff;
+    width:100%;
+    height:100%;
+    position:absolute;
+    z-index: 1;
+    transform: translate(0%,130%) scale(0);
+    transition-duration: 0.6s;
+    visibility:hidden;
+
+}.openwallpaperwindow{
+    transform:translate(0%,0%) scale(1);
+    visibility:visible;
+
+}#wa{
+   background-image:url("img1.jpg");
+   background-position: center;
+   background-size: 490px;
+  width:125px;
+  height:280px;
+   margin-left:10px;
+   margin-top:20px;
+   border-radius: 10px;
+
+}#wb{
+    background-image:url("img2.webp");
+   background-position: center;
+   background-size: 490px;
+    width:125px;
+    height:280px;
+     margin-left:10px;
+     margin-top:20px;
+     border-radius: 10px;
+}#wc{
+    background-image:url("img3.jpg");
+   background-position: center;
+   background-size: 490px;
+  width:125px;
+  height:280px;
+   margin-left:10px;
+   margin-top:20px;
+   border-radius: 10px;
+
+}#wd{
+    background-image:url("img4.jpeg");
+   background-position: center;
+   background-size: 490px;
+  width:125px;
+  height:280px;
+   margin-left:10px;
+   margin-top:20px;
+   border-radius: 10px;
+
+   
+
+}#we{
+    background-image:url("img5.jpeg");
+   background-position: center;
+   background-size: 490px;
+  width:125px;
+  height:280px;
+   margin-left:10px;
+   margin-top:20px;
+   border-radius: 10px;
+ 
+
 }
 #info{
     width:300px;
@@ -37,7 +114,7 @@ body{
     margin-top: 10px;
     text-align: center;
     padding:3px;  
-    background-color: rgba(18, 16, 16, 0.822);
+    background-color: rgba(169, 161, 161, 0.252);
     border-radius: 80px;
     cursor:pointer;
     user-select: none;
@@ -104,35 +181,10 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
   font-size: 30px;
   opacity:60%;
   
-}.backblur{
-    background: linear-gradient(40deg,rgb(16, 166, 236),rgb(195, 210, 195));
 }.nightsky{
-    background:linear-gradient(40deg,rgb(48, 50, 51),rgb(195, 210, 195));
-}.shineday{
-        background: linear-gradient(40deg,rgb(13, 188, 227),rgb(224, 223, 143));
-        
-    }.mayrain{
-        background: linear-gradient(40deg,rgb(255, 255, 255),rgb(56, 56, 55));
-    } .wow{
-        background: linear-gradient(40deg,rgb(127, 246, 143),rgb(128, 136, 136));
-    }.raining{
-        background: linear-gradient(40deg,rgb(224, 227, 224),rgb(128, 136, 136));
-    }.hugerain{
-        background: linear-gradient(40deg,rgb(77, 78, 79),rgb(128, 136, 136));
-    }.fear{
-        background: linear-gradient(40deg,rgb(0, 0, 0),rgb(250, 253, 253));
-    }.snow{
-        background: linear-gradient(40deg,rgb(200, 127, 246),rgb(141, 239, 239));
-
-    }.mistview{
-        background: linear-gradient(40deg,rgb(4, 5, 5),rgb(38, 224, 224));
-
-    }.shower{
-        background: linear-gradient(40deg,rgb(175, 232, 212),rgb(151, 119, 224));
-
-    }.teabreak{
-        background: linear-gradient(40deg,rgb(163, 231, 245),rgb(72, 71, 66));
-    }
+    background:linear-gradient(120deg,rgba(8, 8, 8, 0.379),rgba(0, 0, 0, 0.419));
+   
+}
   #location{
     position:absolute;
     top:150px;
@@ -173,7 +225,7 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
     width:400px;
     height:100px;
     position:absolute;
-    top:200px;
+    top:170px;
     left:200px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 40px;
@@ -190,6 +242,47 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
     transition:transform 0.4s;
     visibility:visible;
 
+}#request{
+    position:absolute;
+    font-size: 20px;
+    top:20px;
+    margin-left: 130px;
+    
+}
+#assisbutton{
+    position:absolute;
+    background-color: white;
+    top:285px;
+    right:240px;
+    width:50px;
+    height:50px;
+    border-radius: 10px;
+    border:0px;
+    color:black;
+    animation-name: hop;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+
+   
+
+}#e3{
+    width:10px;
+    height:10px;
+    margin-top: 10px;
+    margin-left: 7px;
+    background-color: black;
+    animation-name: robo;
+    animation-duration: 4s;
+    
+    animation-iteration-count: infinite;
+    
+    
+}@keyframes robo{
+    20%{height:4px;}
+    
+    
+}@keyframes hop{
+    40%{margin-top:20px;}
 }
 #e1{
     
@@ -202,7 +295,6 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
     animation-iteration-count: infinite;
     margin-top: 10px;
     margin-left: 10px;
-   
 }
 #e2{
    
@@ -466,10 +558,12 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
     left:150px;
     
 }.clockbox{
-    background-color: rgb(1, 1, 1);
+    background-color: rgb(29, 27, 27);
     width:100%;
     height:100%;
     position:absolute;
+    background-position: center;
+    background-size: contain;
     z-index:1;
     transform: translate(0%,0%) scale(0);
     transition:transform 0.4s ;
@@ -482,32 +576,39 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
 
 
 }#alarm{
-    background-color: rgba(240, 248, 255, 0.358);
-    width:50px;
+    background:linear-gradient(130deg,#DEB0DF,#A16BFE);
+    background-size: 130px;
+    background-position: center;
+    width:120px;
     height:50px;
-    border-radius: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color:white;
+    border-radius: 20px;
     border:0px;
     position:absolute;
     top:300px;
-    left:300px;
-    background-image: url("https://cdn-icons-png.flaticon.com/512/1057/1057537.png");
-    background-position: center;
-    background-size: 50px;
+    left:230px;
     user-select: none;
+    padding-right: 10px;
 
 }
 #themes{
-    background-color: rgba(240, 248, 255, 0.358);
-    width:50px;
+    width:120px;
     height:50px;
-    border-radius: 30px;
+    border-radius: 20px;
     border:0px;
     position:absolute;
     top:300px;
-    left:380px;
-    background-image: url("https://th.bing.com/th/id/OIP.m_j9FrBrL_gshLeX5QCJTgHaHa?w=512&h=512&rs=1&pid=ImgDetMain");
+    left:420px;
+    font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    background:linear-gradient(130deg,#5eec8e,#61d0de);
     background-position: center;
-    background-size:43px;
+    background-size:100px;
+    background-position: center;
     cursor:pointer;
     
     }#close{
@@ -547,7 +648,7 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
         margin-top: 10px;
         border-radius: 5px;
         border:0px;
-        background-image: url("https://i.pinimg.com/736x/d8/6f/86/d86f8678fc65bb7ca9cf2f5f035b1702.jpg");
+        background:linear-gradient(140deg,#C4E759,#6DE195);
         background-position: center;
         background-size: 110px;
         background-repeat: no-repeat;
@@ -558,7 +659,7 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
         margin-top: 6px;
         border-radius: 5px;
         border:0px;
-        background-image: url("https://th.bing.com/th/id/OIP.Pxq2-VbQ71lXQQ0_TY-wOwAAAA?w=474&h=296&rs=1&pid=ImgDetMain");
+        background:linear-gradient(240deg,#C1E3FF,#41C7AF);
         background-position: center;
         background-size: 110px;
         background-repeat: no-repeat;
@@ -569,7 +670,7 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
         margin-top: 6px;
         border-radius: 5px;
         border:0px;
-        background-image: url("https://wallpapercave.com/wp/wp5269759.jpg");
+        background:linear-gradient(200deg,#8DEBFF,#6CACFF);
         background-position: center;
         background-size: 110px;
         background-repeat: no-repeat;
@@ -581,7 +682,7 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
         margin-top: 6px;
         border-radius: 5px;
         border:0px;
-        background-image: url("https://i.pinimg.com/originals/f1/8a/cc/f18accd5b2ee2932940fc5d24dfc81ec.jpg");
+        background:linear-gradient(240deg,#DEB0DF,#A16BFE);
         background-position: center;
         background-size: 110px;
         background-repeat: no-repeat;
@@ -592,7 +693,7 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
         margin-top: 6px;
         border-radius: 5px;
         border:0px;
-        background-image: url("https://th.bing.com/th/id/OIP.lDLjIoXr0JFxYus9aANjtAHaEK?w=480&h=270&rs=1&pid=ImgDetMain");
+        background:linear-gradient(140deg,#FDEB82,#F78FED);
         background-position: center;
         background-size: 110px;
         background-repeat: no-repeat;
@@ -679,11 +780,12 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
         visibility:hidden;
     }.raining{
         visibility:visible;
-    }.nul{
-        visibility:hidden;
     }@keyframes drop{
         from{top:10px;}to{top:160px;}
-    }.remainderbox{
+    }.nul{
+        visibility:hidden;
+    }
+    .remainderbox{
         width:100%;
         height:100%;
         position:absolute;
@@ -762,7 +864,7 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
         top:0px;
         left:0px;
         transform:translate(0%,0%) scale(0);
-        transition:transform 0.5s;
+        transition-duration:1s;
         visibility:hidden;
         user-select: none;
     }.opensetreminder{
