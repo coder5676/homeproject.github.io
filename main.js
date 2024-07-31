@@ -248,64 +248,47 @@ let temppopup=document.getElementById("temppop");
         document.getElementById("a").style.backgroundImage="url('img5.jpeg')";
 
     };
-    const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
-    const recognition= new SpeechRecognition();
-    recognition.interimResults=true;
-    recognition.lang='en-US';
-    recognition.continuous=true;
     const searchform=document.getElementById("searchform");
     const searchforminput=searchform.querySelector("input");
-    recognition.onstart=function(){
+    
+    var transcript="hello";
+    function openassistant(){
+        const speechrecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
+        const recognition=new speechrecognition;
+        recognition.lang = "en-US";
+        recognition.interimResults =true;
+        recognition.maxAlternatives = 2;
+        recognition.start();
+        recognition.addEventListener("result",(event)=>{ 
+            transcript=String(event.results[0][0].transcript).toLowerCase();
+            result.value="";
+            result.value=transcript;
+            searchforminput.value=transcript;
+            searchform.focus();
+            if(transcript=="youtube"){
+                readout("opening youtube");
+            }
+        })
+        recognition.onstart=function(){
         console.log("vr active");
         document.getElementById("assistantbox").classList.add("openassistantbox");
-       document.getElementById("assistanton").play();
-       result.value="";
-       searchform.focus();
-       
-    }
+        document.getElementById("assistanton").play();
+    };
     recognition.onend=function(){
         document.getElementById("assistantbox").classList.remove("openassistantbox");
         document.getElementById("assistantoff").play();
         searchform.focus();
+
         
 
     };
-    function openassistant(){
-        recognition.start();
     };
     function closeassistant(){
         recognition.stop();
     }
     const result=document.getElementById("request");
-    recognition.addEventListener("result",resultofspeechrecognition);
-    var transcript="";
-    function resultofspeechrecognition(event){
-        transcript=String(event.results[0][0].transcript).toLowerCase();
-        var result=document.getElementById("request");
-        result.value=transcript;
-        searchforminput.value=transcript;
-        /*system related commands*/
-        var keywords=["temperature","the temperature","time","tie","die","ti","try","skype","date","they","baby","day","reminder","remind","hello","hi"];
-        var work=[speaktemp,speaktemp,speaktime,speaktime,speaktime,speaktime,speaktime,speaktime,speakday,speakday,speakday,speakday,speakreminder,speakreminder,hello,hello];
-        var ind=keywords.indexOf(transcript);
-        if(ind==-1){
-            setTimeout(() => {
-                searchform.submit();
-            }, 750);
-        }
-        else{
-            readout(work[ind]);
-        }
-        
-        readout(work[ind]);
-        
-        /*online related commands*/
-        
-        
-        
-    
 
-    };
+    
 
     
     function readout(message){
