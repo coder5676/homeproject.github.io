@@ -265,9 +265,8 @@ let temppopup=document.getElementById("temppop");
             result.value=transcript;
             searchforminput.value=transcript;
             searchform.focus();
-            if(transcript=="youtube"){
-                readout("opening youtube");
-            }
+            if(transcript=="time"){
+            readout(speaktime);}
         })
         recognition.onstart=function(){
         console.log("vr active");
