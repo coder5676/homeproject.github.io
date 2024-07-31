@@ -265,9 +265,9 @@ let temppopup=document.getElementById("temppop");
             result.value=transcript;
             searchforminput.value=transcript;
             searchform.focus();
-            if(transcript=="time"){
-            readout(speaktime);}
-        })
+            })
+           if(transcript=="time"){
+            readout("current time is");}
         recognition.onstart=function(){
         console.log("vr active");
         document.getElementById("assistantbox").classList.add("openassistantbox");
