@@ -19,6 +19,12 @@
             <source src="reminder.mp3" type="audio/mpeg">
 
         </audio>
+        <audio id="assistanton">
+            <source src="assistanton.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="assistantoff">
+            <source src="assistantoff.mp3" type="audio/mpeg">
+        </audio>
         <button id="wallpaper" onclick="openwallpaper()">✿</button>
         <div id="wallpaperpopup" class="wallpaperpopup" onclick="closewallpaperpopup()">
          <table><tr>
@@ -32,7 +38,7 @@
         <div id="remainderbox" class="remainderbox">
             <p id="imagerem">🏂</p>
             <p id="text">Hey! here is your reminder about</p>
-            <p id="mainarea">sabji lene jana hai</p>
+            <p id="mainarea"></p>
             <button id="snooze" onclick="snooze()">Remind again after 5 minutes</button>
             <button id="complete" onclick="stop()">Stop</button>
         </div>
@@ -50,12 +56,12 @@
        <h1 id="time">
        </h1></div>
        </div>
-       <div id="assistantbox" class="assistantbox">
+       <div id="assistantbox" class="assistantbox" onclick="closeassistant()">
         <table><tr><td><p id="e1"></p></td>
             <td><p id="e2"></p></td>
             <td><p id="e1"></p></td>
             <td><p id="e2"></p></td></tr></table>
-         <p id="request">hello open youtube</p>
+         <input id="request" class="request" type="text" placeholder="Say anything" autocomplete="off" autofocus>
      </div>
        <div id="r1" class="r1"></div>
        <div id="r2" class="r2"></div>
@@ -102,7 +108,7 @@
     </div>
     <div id="swipebox" class="swipebox" >
         <form action="https://www.google.com/search" method="get" id="searchform">
-            <input type="text" name="q" placeholder="Type anything here" id="searchbox" autocomplete="off" target="_top">
+            <input type="text" name="q" placeholder="Type anything here"  autocomplete="off" target="_top">
 
         </form>
     
@@ -141,6 +147,9 @@
     <button id="swipe" onclick="openswipebox()">&#8592</button>
     <div id="remainder" class="remainder"></div>
     </div>
+    
+
 </body>
+    <script src="main.js"></script>
+    
 </html>
-<script src="main.js"></script>
