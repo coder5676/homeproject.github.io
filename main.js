@@ -250,30 +250,38 @@ let temppopup=document.getElementById("temppop");
     };
     const searchform=document.getElementById("searchform");
     const searchforminput=searchform.querySelector("input");
-    
+    const speechrecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
     var transcript="hello";
     function openassistant(){
-        const speechrecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
-        const recognition=new speechrecognition;
+        if(speechrecognition){
+            result.value="supported";
+        }
+        else{
+            result.value("not supported");
+        }
+        
+        const recognition=new speechrecognition();
         recognition.lang = "en-US";
         recognition.interimResults =true;
-        recognition.maxAlternatives = 2;
+        recognition.maxAlternatives = 1;
         recognition.continuous=true;
         recognition.start();
         recognition.addEventListener("result",(event)=>{ 
             transcript=String(event.results[0][0].transcript).toLowerCase();
             result.value=transcript;
-            searchforminput.value=transcript;
-            searchform.focus();
             var pos=0;
             const keywords=["temperature","time","skype","date","day","they","music"];
             const words=[speaktemp,speaktime,speaktime,speakday,speakday,speakday,"opening music on google"];
-            const ind=keywords.indexOf(transcript);
+            const ind=keywords.indexOf(result.value);
+            console.log(ind);
             if(transcript!="" && ind>=0){
                 readout(words[ind]);
+                
 
             }
             else if(transcript!="" && ind==-1){
+            searchforminput.value=transcript;
+            searchform.focus();
             setTimeout(()=>{
                 searchform.submit();
             }
@@ -291,7 +299,6 @@ let temppopup=document.getElementById("temppop");
         recognition.onstart=function(){
         console.log("vr active");
         document.getElementById("assistantbox").classList.add("openassistantbox");
-        result.value="";
         document.getElementById("assistanton").play();
     };
     recognition.onend=function(){
