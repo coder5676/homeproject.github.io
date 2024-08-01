@@ -326,7 +326,7 @@ let temppopup=document.getElementById("temppop");
     function readout(message){
         let speech= new SpeechSynthesisUtterance();
         let voices=speechSynthesis.getVoices();
-        speech.voice=voices[3];
+        speech.voice=voices[2];
         speech.text=message;
         window.speechSynthesis.speak(speech);
 
