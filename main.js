@@ -4,6 +4,7 @@ let temppopup=document.getElementById("temppop");
     });
     /*open temp popup*/
     function opentemp(){
+        readout(speaktemp)
         temppopup.classList.add("open-temppop");
     };
     function closetemp(){
@@ -167,10 +168,12 @@ let temppopup=document.getElementById("temppop");
         
     } ;
     function openrecipe(){
+        readout("watch your favourite recipes from here")
         document.getElementById("recipesbox").classList.add("openrecipebox");
         document.getElementById("swipe").innerHTML="&#8594";
     };
     function opennews(){
+        readout("opening news on n d t v")
         document.getElementById("newsframe").classList.add("opennewsframe");
         document.getElementById("newsframe").src="https://www.ndtv.com/";
        
@@ -178,6 +181,7 @@ let temppopup=document.getElementById("temppop");
     };
     function openclock(){
         document.getElementById("clockbox").classList.add("openclockbox");
+        readout("The time is "+speaktime);
         
     };
     function closeclock(){
@@ -211,6 +215,12 @@ let temppopup=document.getElementById("temppop");
     function openmusic(){
         const a=document.getElementById("musican");
         a.setAttribute("href","https://www.jiosaavn.com/");
+        readout("opening jio saavan ");
+    };
+    function openyoutube(){
+       const b= document.getElementById("youtubeopen");
+       b.setAttribute("href","https://www.youtube.com/");
+        readout("opening youtube");
     };
    function openremainder(){
         document.getElementById("setreminder").classList.add("opensetreminder");
@@ -222,6 +232,7 @@ let temppopup=document.getElementById("temppop");
     
     function openwallpaper(){
         document.getElementById("wallpaperpopup").classList.add("openwallpaperwindow");
+        readout("hey you can choose any wallpaper from here for your screen");
     };
     function closewallpaperpopup(){
         document.getElementById("wallpaperpopup").classList.remove("openwallpaperwindow");
