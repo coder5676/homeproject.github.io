@@ -258,19 +258,40 @@ let temppopup=document.getElementById("temppop");
         recognition.lang = "en-US";
         recognition.interimResults =true;
         recognition.maxAlternatives = 2;
+        recognition.continuous=true;
         recognition.start();
         recognition.addEventListener("result",(event)=>{ 
             transcript=String(event.results[0][0].transcript).toLowerCase();
-            result.value="";
             result.value=transcript;
             searchforminput.value=transcript;
             searchform.focus();
-            })
-           if(transcript=="time"){
-            readout("current time is");}
+            var pos=0;
+            const keywords=["temperature","time","skype","date","day","they","music"];
+            const words=[speaktemp,speaktime,speaktime,speakday,speakday,speakday,"opening music on google"];
+            const ind=keywords.indexOf(transcript);
+            if(transcript!="" && ind>=0){
+                readout(words[ind]);
+
+            }
+            else if(transcript!="" && ind==-1){
+            setTimeout(()=>{
+                searchform.submit();
+            }
+
+            )
+
+            }
+            else{
+                readout("Sorry cant hear you");
+            }
+
+            
+        }
+    )
         recognition.onstart=function(){
         console.log("vr active");
         document.getElementById("assistantbox").classList.add("openassistantbox");
+        result.value="";
         document.getElementById("assistanton").play();
     };
     recognition.onend=function(){
