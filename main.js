@@ -288,8 +288,8 @@ let temppopup=document.getElementById("temppop");
         const transcript=String(event.results[0][0].transcript).toLowerCase();
         result.value=transcript;
         var ind=-1;
-        const keywords=["temperature","time","skype","date","day","they","music"];
-        const words=[speaktemp,speaktime,speaktime,speakday,speakday,speakday,"opening music on google"];
+        const keywords=["temperature","time","skype","date","day","they","reminder","remind"];
+        const words=[speaktemp,speaktime,speaktime,speakday,speakday,speakday,speakreminder,speakreminder];
         ind=keywords.indexOf(transcript);
         console.log(ind);
         if(ind>=0){
