@@ -250,57 +250,20 @@ let temppopup=document.getElementById("temppop");
     };
     const searchform=document.getElementById("searchform");
     const searchforminput=searchform.querySelector("input");
-    const speechrecognition=window.SpeechRecognition || window.webkitSpeechRecognition;
-    var transcript="hello";
+    const speechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+    const recognition=new speechRecognition();
+
     function openassistant(){
-        if(speechrecognition){
-            result.value="supported";
-        }
-        else{
-            result.value("not supported");
-        }
-        
-        const recognition=new speechrecognition();
-        recognition.lang = "en-US";
-        recognition.interimResults =true;
-        recognition.maxAlternatives = 1;
-        recognition.continuous=true;
         recognition.start();
-        recognition.addEventListener("result",(event)=>{ 
-            transcript=String(event.results[0][0].transcript).toLowerCase();
-            result.value=transcript;
-            var pos=0;
-            const keywords=["temperature","time","skype","date","day","they","music"];
-            const words=[speaktemp,speaktime,speaktime,speakday,speakday,speakday,"opening music on google"];
-            const ind=keywords.indexOf(result.value);
-            console.log(ind);
-            if(transcript!="" && ind>=0){
-                readout(words[ind]);
-                
-
-            }
-            else if(transcript!="" && ind==-1){
-            searchforminput.value=transcript;
-            searchform.focus();
-            setTimeout(()=>{
-                searchform.submit();
-            }
-
-            )
-
-            }
-            else{
-                readout("Sorry cant hear you");
-            }
-
-            
-        }
-    )
-        recognition.onstart=function(){
-        console.log("vr active");
+        };
+    recognition.onstart=function(){ 
+        console.log("started");
         document.getElementById("assistantbox").classList.add("openassistantbox");
         document.getElementById("assistanton").play();
-    };
+
+            
+        };
+    
     recognition.onend=function(){
         document.getElementById("assistantbox").classList.remove("openassistantbox");
         document.getElementById("assistantoff").play();
@@ -309,11 +272,42 @@ let temppopup=document.getElementById("temppop");
         
 
     };
-    };
+    const result=document.getElementById("request");
+    recognition.onresult=(event)=>{
+        const transcript=String(event.results[0][0].transcript).toLowerCase();
+        result.value=transcript;
+        var ind=-1;
+        const keywords=["temperature","time","skype","date","day","they","music"];
+        const words=[speaktemp,speaktime,speaktime,speakday,speakday,speakday,"opening music on google"];
+        ind=keywords.indexOf(transcript);
+        console.log(ind);
+        if(ind>=0){
+            readout(words[ind]);
+            
+
+        }
+        else if(ind==-1){
+        searchforminput.value=transcript;
+        searchform.focus();
+        setTimeout(()=>{
+            searchform.submit();
+        }
+
+        )
+
+        }
+        else{
+            readout("Sorry cant hear you");
+        }
+
+
+
+    }
+    
     function closeassistant(){
         recognition.stop();
     }
-    const result=document.getElementById("request");
+    
 
     
 
