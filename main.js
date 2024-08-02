@@ -1,4 +1,4 @@
-let temppopup=document.getElementById("temppop");
+ let temppopup=document.getElementById("temppop");
    document.addEventListener("click",()=>{
          document.documentElement.requestFullscreen();
     });
@@ -63,6 +63,7 @@ let temppopup=document.getElementById("temppop");
     }
     var speakday="none";
     var speaktime="none";
+    var show="00:00"
     var speakgreet="hello";
     function showtime(){
         let time=new Date;
@@ -80,6 +81,7 @@ let temppopup=document.getElementById("temppop");
         }
         let currenttime=hours+":"+min;
         var currtime=String(hours)+":"+String(min);
+        show=currtime;
         week=["Sun","Mon","Tue","Wed","Thr","Fri","Sat"];
         montharr=["january","february","march","April","May","june","july","august","september","october","november","december"]
         speakday=week[day]+""+date+""+montharr[month];
@@ -111,10 +113,11 @@ let temppopup=document.getElementById("temppop");
             document.getElementById("temppop").style.backgroundColor="#1D1632";
             document.getElementById("bgimage").innerHTML="🌑";
             document.getElementById("sun").innerHTML="✨";
-            document.getElementById("temp").classList.add("nightsky");
+           
         }
         document.getElementById("greet").innerHTML=text;
         document.getElementById("greet2").innerHTML=text;
+        document.getElementById("timeshow").innerHTML=show;
         speakgreet=text;
         if(String(currtime)==String(rem)){
             document.getElementById("remainderbox").classList.add("openremainder");
@@ -175,7 +178,8 @@ let temppopup=document.getElementById("temppop");
     } ;
     function openrecipe(){
         document.getElementById("recipesbox").classList.add("openrecipebox");
-        document.getElementById("swipe").innerHTML="→";
+        document.getElementById("swipe").innerHTML="⌂";
+
     };
     function opennews(){
         readout("opening news on n d t v")
@@ -260,7 +264,7 @@ let temppopup=document.getElementById("temppop");
 
     };
     function wd(){
-        document.getElementById("a").style.backgroundImage="url('img4.jpg')";
+        document.getElementById("a").style.backgroundImage="url('img4.avif')";
 
     };
     function we(){
@@ -339,8 +343,4 @@ let temppopup=document.getElementById("temppop");
         window.speechSynthesis.speak(speech);
 
     };
-    
-    
-    
-   
     
