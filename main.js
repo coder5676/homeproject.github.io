@@ -4,7 +4,8 @@ let temppopup=document.getElementById("temppop");
     });
     /*open temp popup*/
     function opentemp(){
-        readout(speaktemp)
+        readout(speakgreet);
+        readout(speaktemp);
         temppopup.classList.add("open-temppop");
     };
     function closetemp(){
@@ -36,6 +37,7 @@ let temppopup=document.getElementById("temppop");
          about="none";
          document.getElementById("remainderbox").classList.remove("openremainder");
          document.getElementById("reminderaudio").pause();
+         readout("this reminder will not play again")
     }
     function snooze(){
         document.getElementById("remainderbox").classList.remove("openremainder");
@@ -56,11 +58,12 @@ let temppopup=document.getElementById("temppop");
             minutes="0"+minutes;
         }
         rem=String(later);
+        readout("reminder is paused for 5 minutes");
         document.getElementById("reminderaudio").pause();
     }
     var speakday="none";
     var speaktime="none";
-    var hello="hi how are you";
+    var speakgreet="hello";
     function showtime(){
         let time=new Date;
         let day=time.getDay();
@@ -111,7 +114,8 @@ let temppopup=document.getElementById("temppop");
             document.getElementById("temp").classList.add("nightsky");
         }
         document.getElementById("greet").innerHTML=text;
-        hello="hello "+text +"how are you";
+        document.getElementById("greet2").innerHTML=text;
+        speakgreet=text;
         if(String(currtime)==String(rem)){
             document.getElementById("remainderbox").classList.add("openremainder");
             document.getElementById("mainarea").innerHTML=about;
@@ -142,7 +146,7 @@ let temppopup=document.getElementById("temppop");
         document.getElementById("description").innerHTML=data.weather[0].description;
         document.getElementById("location").innerHTML=city;
         document.getElementById("feelslike").innerHTML="Feels like : "+data.main.feels_like+"°";
-        speaktemp="today's temperature in"+city+"is"+temp+"with"+data.weather[0].description+"and humidity of"+data.main.humidity+"percent";
+        speaktemp =" it is "+temp+" today with"+data.weather[0].description;
         const d=data.weather[0].description;
         let position=desc.indexOf(d);
         console.log(position);
@@ -164,23 +168,30 @@ let temppopup=document.getElementById("temppop");
         document.getElementById("recipesbox").classList.remove("openrecipebox");
         document.getElementById("newsframe").classList.remove("opennewsframe");
         document.getElementById("newsframe").src="";
-        document.getElementById("swipe").innerHTML="&#8592";
+        document.getElementById("swipe").innerHTML="⌂";
+        document.getElementById("swipe").style.color="white";
+        document.getElementById("swipe").style.backgroundColor=" rgba(5, 5, 5, 0)";
         
     } ;
     function openrecipe(){
-        readout("watch your favourite recipes from here")
         document.getElementById("recipesbox").classList.add("openrecipebox");
-        document.getElementById("swipe").innerHTML="&#8594";
+        document.getElementById("swipe").innerHTML="→";
     };
     function opennews(){
         readout("opening news on n d t v")
         document.getElementById("newsframe").classList.add("opennewsframe");
         document.getElementById("newsframe").src="https://www.ndtv.com/";
        
-        document.getElementById("swipe").innerHTML="&#8594";
+        document.getElementById("swipe").innerHTML="→";
+        document.getElementById("swipe").style.fontSize="40px";
+        document.getElementById("swipe").style.backgroundColor="white";
+        document.getElementById("swipe").style.color="black";
+
+
     };
     function openclock(){
         document.getElementById("clockbox").classList.add("openclockbox");
+        
         readout("The time is "+speaktime);
         
     };
@@ -224,6 +235,7 @@ let temppopup=document.getElementById("temppop");
     };
    function openremainder(){
         document.getElementById("setreminder").classList.add("opensetreminder");
+        readout(speakreminder);
     };
     function closerem(){
         document.getElementById("setreminder").classList.remove("opensetreminder");
@@ -232,7 +244,6 @@ let temppopup=document.getElementById("temppop");
     
     function openwallpaper(){
         document.getElementById("wallpaperpopup").classList.add("openwallpaperwindow");
-        readout("hey you can choose any wallpaper from here for your screen");
     };
     function closewallpaperpopup(){
         document.getElementById("wallpaperpopup").classList.remove("openwallpaperwindow");
@@ -252,11 +263,11 @@ let temppopup=document.getElementById("temppop");
 
     };
     function wd(){
-        document.getElementById("a").style.backgroundImage="url('img4.jpeg')";
+        document.getElementById("a").style.backgroundImage="url('img4.avif')";
 
     };
     function we(){
-        document.getElementById("a").style.backgroundImage="url('img5.jpeg')";
+        document.getElementById("a").style.backgroundImage="url('img5.webp')";
 
     };
     const searchform=document.getElementById("searchform");
@@ -288,8 +299,8 @@ let temppopup=document.getElementById("temppop");
         const transcript=String(event.results[0][0].transcript).toLowerCase();
         result.value=transcript;
         var ind=-1;
-        const keywords=["temperature","time","skype","date","day","they","reminder","remind"];
-        const words=[speaktemp,speaktime,speaktime,speakday,speakday,speakday,speakreminder,speakreminder];
+        const keywords=["temperature","time","skype","date","day","they","hello"];
+        const words=[speaktemp,speaktime,speaktime,speakday,speakday,speakday,speakgreet];
         ind=keywords.indexOf(transcript);
         console.log(ind);
         if(ind>=0){
@@ -326,7 +337,7 @@ let temppopup=document.getElementById("temppop");
     function readout(message){
         let speech= new SpeechSynthesisUtterance();
         let voices=speechSynthesis.getVoices();
-        speech.voice=voices[2];
+        speech.voice=voices[3];
         speech.text=message;
         window.speechSynthesis.speak(speech);
 
