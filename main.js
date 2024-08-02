@@ -181,11 +181,8 @@ let temppopup=document.getElementById("temppop");
         readout("opening news on n d t v")
         document.getElementById("newsframe").classList.add("opennewsframe");
         document.getElementById("newsframe").src="https://www.ndtv.com/";
-       
-        document.getElementById("swipe").innerHTML="→";
         document.getElementById("swipe").style.fontSize="40px";
-        document.getElementById("swipe").style.backgroundColor="white";
-        document.getElementById("swipe").style.color="black";
+        document.getElementById("swipe").style.color="white";
 
 
     };
