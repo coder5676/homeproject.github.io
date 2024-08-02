@@ -9,6 +9,7 @@
 </head>
 <body>          
     <div id="a">
+        <h id="specialtext"></h>
         <div id="assisbutton" onclick="openassistant()">
             <table><tr><td>
             <div id="e3"></div></td>
@@ -37,10 +38,11 @@
        
         <div id="remainderbox" class="remainderbox">
             <p id="imagerem">⏰</p>
-            <p id="text">Hey! here is your reminder about</p>
-            <p id="mainarea"></p>
-            <button id="snooze" onclick="snooze()">Remind again after 5 minutes</button>
-            <button id="complete" onclick="stop()">Stop</button>
+            <p id="greet2">good morning</p>
+            <p id="text">Hey! here is your reminder</p>
+            <p id="mainarea"> no text</p>
+            <button id="snooze" onclick="snooze()">◷</button>
+            <button id="complete" onclick="stop()">◔</button>
         </div>
         <div id="r1" class="r1"></div>
        <div id="r2" class="r2"></div>
@@ -116,7 +118,7 @@
         <button id="music" onclick="openmusic()">Music<p id="ic">🎵</p></button></a>
         
         <a id="youtubeopen" target="_top" ><button id="youtube" onclick="openyoutube()" >Youtube<p id="ic">🎥</p></button></a>
-        <button id="recipes"  onclick="openrecipe()">Recipes<p id="ic">🍕</p></button>
+        <button id="recipes"  onclick="openrecipe()">Ambience<p id="ic">☘️</p></button>
        <button id="news"  onclick="opennews()">News<p id="ic">📰</p></button>
     </div>
     <iframe id="newsframe" name="newsframe" class="newsframe" ></iframe>
@@ -126,8 +128,8 @@
 <input type="text" placeholder="Remind me about" id="remabout">
 <button id="setrem" onclick="save()">Ok</button>
 <h1 id="colon1">:</h1>
-<input type="number"  min="0" max="23" id="hr" value="00">
-<input type="number" min="0" max="59" id="mi" value="00">
+<input type="text"  id="hr" placeholder="hr" >
+<input type="text"  id="mi" placeholder="mi">
 <input id="remindertime" type="text" placeholder="00:00">
 </div>
         <h1 id="hm">20:30<p id="ss">56</p></h1><button id="alarm" onclick="openremainder()">Reminder</button>
@@ -144,7 +146,7 @@
 
     <div id="recipesbox" class="recipesbox"></div>
     <div id="clock"></div>
-    <button id="swipe" onclick="openswipebox()">&#8592</button>
+    <button id="swipe" onclick="openswipebox()">⌂</button>
     <div id="remainder" class="remainder"></div>
     </div>
     
