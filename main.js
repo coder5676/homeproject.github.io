@@ -263,7 +263,7 @@ let temppopup=document.getElementById("temppop");
 
     };
     function wd(){
-        document.getElementById("a").style.backgroundImage="url('img4.avif')";
+        document.getElementById("a").style.backgroundImage="url('img4.jpg')";
 
     };
     function we(){
