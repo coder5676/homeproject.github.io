@@ -260,7 +260,7 @@ let temppopup=document.getElementById("temppop");
 
     };
     function wd(){
-        document.getElementById("a").style.backgroundImage="url('img4.jpg')";
+        document.getElementById("a").style.backgroundImage="url('img4.avif')";
 
     };
     function we(){
