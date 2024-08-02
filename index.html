@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="main.css">
     
 </head>
-<body>          
-    <div id="a">
+<body > 
+    <div id="a">       
         <h id="specialtext"></h>
         <div id="assisbutton" onclick="openassistant()">
             <table><tr><td>
@@ -26,7 +26,7 @@
         <audio id="assistantoff">
             <source src="assistantoff.mp3" type="audio/mpeg">
         </audio>
-        <button id="wallpaper" onclick="openwallpaper()">✿</button>
+        
         <div id="wallpaperpopup" class="wallpaperpopup" onclick="closewallpaperpopup()">
          <table><tr>
             <td><div id="wa" onclick="wa()"></div></td>
@@ -39,7 +39,8 @@
         <div id="remainderbox" class="remainderbox">
             <p id="imagerem">⏰</p>
             <p id="greet2">good morning</p>
-            <p id="text">Hey! here is your reminder</p>
+            <p id="timeshow">00:00</p>
+            <p id="text">REMINDER</p>
             <p id="mainarea"> no text</p>
             <button id="snooze" onclick="snooze()">◷</button>
             <button id="complete" onclick="stop()">◔</button>
@@ -54,7 +55,7 @@
         <h2 id="tempno">00°
         </h2><p id="weathericon1">🐳</p></div>
         <p id="daydate"></p>
-        <div id="tim" onclick="openclock()">
+        <div id="tim">
        <h1 id="time">
        </h1></div>
        </div>
@@ -114,12 +115,14 @@
 
         </form>
     
-        <a id="musican" target="_self">
+        <a id="musican" target="_top">
         <button id="music" onclick="openmusic()">Music<p id="ic">🎵</p></button></a>
         
         <a id="youtubeopen" target="_self" ><button id="youtube" onclick="openyoutube()" >Youtube<p id="ic">🎥</p></button></a>
         <button id="recipes"  onclick="openrecipe()">Ambience<p id="ic">☘️</p></button>
        <button id="news"  onclick="opennews()">News<p id="ic">📰</p></button>
+       <button id="wallpaper" onclick="openwallpaper()">✿Themes</button>
+       <button id="opentime" onclick="openclock()">◷ Clock</button>
     </div>
     <iframe id="newsframe" name="newsframe" class="newsframe" ></iframe>
     <div id="clockbox" class="clockbox">
