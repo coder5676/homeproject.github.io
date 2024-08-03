@@ -139,6 +139,7 @@
         const desc=["clear sky","few clouds","scattered clouds","broken clouds","shower rain","rain","thunderstorm","snow","mist","overcast clouds","light rain","moderate rain","heavy intensity rain"];
         const descicon=["🪂","🌤️","🌨️","🌥️","🌧️","☔","⚡","☃️","😶‍🌫️","☁️","🌧️","☔","⛈️"];
         const anim=["nul","nul","nul","nul","raining","raining","raining","nul","nul","nul","raining","raining","raining"];
+        const quote=[" it's a nice day ","Clouds are beautiful outside","Don't forget your umbrella","Winds are speedy today","Look plants are so happy","Weather is wet today","Avoid going out it's lightning","Nice day for a snowman","Drive safe low visibility","It could rain just wait","Nice time for a tea","Outside is beautiful in rain.","Heavy rain avoid going out today"];
 
         document.getElementById("tempno").innerHTML=temp;
         document.getElementById("tempfont").innerHTML=temp;
@@ -156,6 +157,7 @@
         if(position>-1){
         document.getElementById("weathericon1").innerHTML=descicon[position];
         document.getElementById("weathericon2").innerHTML=descicon[position];
+        document.getElementById("specialtext").innerHTML=quote[position];
         document.getElementById("r1").classList.add(anim[position]);
         document.getElementById("r2").classList.add(anim[position]);
         document.getElementById("r3").classList.add(anim[position]);
@@ -226,8 +228,8 @@
     };
     function openmusic(){
         const a=document.getElementById("musican");
-        a.setAttribute("href","https://music.youtube.com/");
-        readout("opening youtube music ");
+        a.setAttribute("href","https://www.jiosaavn.com/");
+        readout("opening jio saavan ");
     };
     function openyoutube(){
        const b= document.getElementById("youtubeopen");
@@ -264,7 +266,7 @@
 
     };
     function wd(){
-        document.getElementById("a").style.backgroundImage="url('img4.jpg')";
+        document.getElementById("a").style.backgroundImage="url('img4.avif')";
 
     };
     function we(){
@@ -343,4 +345,13 @@
         window.speechSynthesis.speak(speech);
 
     };
+    function homescreen(){
+        document.getElementById("time").classList.toggle("timestyle");
+        document.getElementById("specialtext").classList.toggle("openspecialtext");
+        document.getElementById("weathericon1").classList.toggle("weathericonstyle");
+        document.getElementById("temp").classList.toggle("tempstyle");
+    }
+    setInterval(homescreen,10000);
     
+    
+   
