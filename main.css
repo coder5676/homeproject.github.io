@@ -71,7 +71,7 @@
    border-radius: 10px;
 
 }#wd{
-    background-image:url("img4.avif");
+    background-image:url("img4.jpg");
    background-position: center;
    background-size: 490px;
   width:125px;
@@ -431,7 +431,6 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
     border:0px;
     text-align: center;
     padding-bottom: 10px;
-    user-select: none;
     
 }.swipebox{
    position:absolute;
