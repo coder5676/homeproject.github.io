@@ -252,8 +252,8 @@
     };
     function openmusic(){
         const a=document.getElementById("musican");
-        a.setAttribute("href","https://www.jiosaavn.com/");
-        readout("opening jio saavan ");
+        a.setAttribute("href","https://music.youtube.com/");
+        readout("opening youtube  music ");
     };
     function openyoutube(){
        const b= document.getElementById("youtubeopen");
