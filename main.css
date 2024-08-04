@@ -452,6 +452,9 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
     padding-bottom: 10px;
     user-select: none;
     
+}#swipe:focus{
+    outline:none;
+    box-shadow: none;
 }
 .swipebox{
    position:absolute;
@@ -660,6 +663,9 @@ background:linear-gradient(30deg,rgb(122, 237, 197),rgb(140, 187, 231));
     width:90px;
     border-radius: 70px;
     
+}#mainbutton:focus{
+    outline:none;
+    box-shadow: none;
 }
 #themes{
     width:120px;
