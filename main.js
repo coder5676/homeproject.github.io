@@ -252,8 +252,8 @@
     };
     function openmusic(){
         const a=document.getElementById("musican");
-        a.setAttribute("href","https://music.youtube.com/");
-        readout("opening youtube  music ");
+        a.setAttribute("href","https://www.jiosaavn.com/");
+        readout("opening jio saavan ");
     };
     function openyoutube(){
        const b= document.getElementById("youtubeopen");
@@ -382,7 +382,7 @@
 
         if(document.getElementById("b1").innerHTML=="RAINING"){
             document.getElementById("b1").innerHTML="▷";
-            document.getElementById("mainbutton").innerHTML="||";
+            document.getElementById("mainbutton").innerHTML="▢";
             document.getElementById("a1").play();
             document.getElementById("a2").pause();
             document.getElementById("a3").pause();
@@ -409,7 +409,7 @@
     function pa2(){
         if(document.getElementById("b2").innerHTML=="PIANO"){
             document.getElementById("b1").innerHTML="RAINING";
-            document.getElementById("mainbutton").innerHTML="||";
+            document.getElementById("mainbutton").innerHTML="▢";
             document.getElementById("a1").pause();
             document.getElementById("a2").play();
             document.getElementById("a3").pause();
@@ -434,7 +434,7 @@
     function pa3(){
         if(document.getElementById("b3").innerHTML=="FOREST"){
             document.getElementById("b1").innerHTML="RAINING";
-            document.getElementById("mainbutton").innerHTML="||";
+            document.getElementById("mainbutton").innerHTML="▢";
             document.getElementById("a1").pause();
             document.getElementById("a2").pause();
             document.getElementById("a3").pause();
@@ -459,7 +459,7 @@
     function pa4(){
         if(document.getElementById("b4").innerHTML=="MOUNTAIN"){
             document.getElementById("b1").innerHTML="RAINING";
-            document.getElementById("mainbutton").innerHTML="||";
+            document.getElementById("mainbutton").innerHTML="▢";
             document.getElementById("a1").pause();
             document.getElementById("a2").pause();
             document.getElementById("a3").pause();
@@ -484,7 +484,7 @@
     function pa5(){
         if(document.getElementById("b5").innerHTML=="AMBIENT MUSIC"){
             document.getElementById("b1").innerHTML="RAINING";
-            document.getElementById("mainbutton").innerHTML="||";
+            document.getElementById("mainbutton").innerHTML="▢";
             document.getElementById("a1").pause();
             document.getElementById("a2").pause();
             document.getElementById("a3").play();
@@ -512,7 +512,7 @@
         const l=document.getElementById("t").innerHTML;
         let p=n.indexOf(l);
         if(document.getElementById("mainbutton").innerHTML=="▷"){
-            document.getElementById("mainbutton").innerHTML="||";
+            document.getElementById("mainbutton").innerHTML="▢";
             document.getElementById(song[p]).play();
         }
         else{
