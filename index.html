@@ -8,13 +8,38 @@
     
 </head>
 <body > 
-    <div id="a">       
-        <h id="specialtext" class="specialtext"> hey its 30 degree today</h>
-        <div id="assisbutton" onclick="openassistant()">
-            <table><tr><td>
-            <div id="e3"></div></td>
-            <td><div id="e3"></div></td></tr></table>
+    <div id="a" ondblclick="openassistant()" > 
+        <audio id="a1" loop>
+            <source src="rain.mp3">
+          </audio>
+          <audio id="a2" src="afternoon.mp3" loop></audio>
+          <audio id="a3" src="softatmo.mp3" loop></audio>
+          <audio id="a4" src="jungle.mp3" loop></audio>
+          <audio id="a5" src="forest.mp3" loop></audio>
+          <audio id="a6" src="happy.mp3" loop></audio>
+
+        <div id="ambientbox" class="ambientbox">
+            <button id="closeambient" onclick="closeambient()">✕</button>
+            <table>
+           <button id="b1" onclick="pa1()">RAINING</button>
+      <button id="b2" onclick="pa2()">PIANO</button>
+           <button id="b3" onclick="pa3()">FOREST</button>
+        <button id="b4" onclick="pa4()">MOUNTAIN</button>
+         <button id="b5" onclick="pa5()">AMBIENT MUSIC</button>
+            </table>
+            
+        </div>      
+        <div id="info1" class="info1">
+            <h id="condition">None</h>
+            <h id="greet3"> good morning</h>
         </div>
+        <div id="info2" class="info2">
+        </div>
+        <div id="info3" class="info3">
+            <button id="mainbutton" onclick="mainplay()">▷</button>
+            <h id="t">Happy</h>
+        </div>
+       
        
         <audio id="reminderaudio" loop>
             <source src="reminder.mp3" type="audio/mpeg">
@@ -32,7 +57,7 @@
             <td><div id="wa" onclick="wa()"></div></td>
             <td><div id="wb" onclick="wb()"></div></td>
             <td><div id="wc" onclick="wc()"></div></td>
-            <td><div id="wd" onclick="wd()"></div></td>
+           <td><div id="wd" onclick="wd()"></div></td>
             <td><div id="we" onclick="we()"></div></td></tr></table>
         </div>
        
@@ -50,11 +75,11 @@
        <div id="r3" class="r3"></div>
        <div id="r4" class="r4"></div>
        <div id="r5" class="r5"></div>
-       <div id="info">
+       <div id="info" class="info">
         <div id="temp" class="temp" onclick="opentemp()" >
         <h2 id="tempno" class="tempno">00°
         </h2><p id="weathericon1" class="weathericon1">🐳</p></div>
-        <p id="daydate"></p>
+        <p id="daydate" class="daydate"></p>
         <div id="tim">
        <h1 id="time" class="time">
        </h1></div>
@@ -110,22 +135,27 @@
         </table></div>
     </div>
     <div id="swipebox" class="swipebox" >
+
         <form action="https://www.google.com/search" method="get" id="searchform">
             <input type="text" name="q" placeholder="Type anything here"  autocomplete="off" target="_top">
 
         </form>
-    
+    <table>
+        <tr>
+            <td>
         <a id="musican" target="_top">
-        <button id="music" onclick="openmusic()">Music<p id="ic">🎵</p></button></a>
+        <button id="app" onclick="openmusic()">Music</button></a></td>
         
-        <a id="youtubeopen" target="_self" ><button id="youtube" onclick="openyoutube()" >Youtube<p id="ic">🎥</p></button></a>
-        <button id="recipes"  onclick="openrecipe()">Ambience<p id="ic">☘️</p></button>
-       <button id="news"  onclick="opennews()">News<p id="ic">📰</p></button>
-       <button id="wallpaper" onclick="openwallpaper()">✿Themes</button>
-       <button id="opentime" onclick="openclock()">◷ Clock</button>
-    </div>
+        <td><a id="youtubeopen" target="_self" ><button id="app" onclick="openyoutube()" >Youtube</button></a></td>
+       <td> <button id="app"  onclick="openrecipe()">Ambience</button></td>
+       <td><button id="app"  onclick="opennews()">News</button></td></tr>
+      <tr> <td><button id="app" onclick="openwallpaper()">Wallpaper</button></td>
+       <td><button id="app" onclick="openclock()">Clock</button></td>
+       <td><button id="app" onclick="openview()">View</button></td></tr>
+    </table></div>
     <iframe id="newsframe" name="newsframe" class="newsframe" ></iframe>
     <div id="clockbox" class="clockbox">
+        <h id="remainderinfo">you have a remainder for</h>
         <div id="setreminder" class="setreminder">
 <button onclick="closerem()" id="closerem">X</button>
 <input type="text" placeholder="Remind me about" id="remabout">
@@ -147,8 +177,7 @@
     <button id="te" onclick="te()"></button>
 </div></div>
 
-    <div id="recipesbox" class="recipesbox"></div>
-    <div id="clock"></div>
+        <div id="clock"></div>
     <button id="swipe" onclick="openswipebox()">⌂</button>
     <div id="remainder" class="remainder"></div>
     </div>
